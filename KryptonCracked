@@ -6,3 +6,5 @@ $body = @{
     content = "**Public IP:** ` $ip `	"
 } | ConvertTo-Json
 Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $body -ContentType 'application/json'
+Write-Host ""  # Prints an empty line
+Write-Host "test"
